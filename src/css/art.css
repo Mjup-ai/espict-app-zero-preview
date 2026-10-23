@@ -1,0 +1,62 @@
+/* 作品の見本（中の文字は、入れ物の はばに合わせて大きさが変わる） */
+.art { position: relative; width: 100%; aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden; container-type: inline-size; isolation: isolate; font-family: var(--font); }
+.art * { box-sizing: border-box; }
+/* 入れ物（.art）自身には cqw を使わない。中の .art-in から使う */
+.art-in { position: absolute; inset: 0; }
+
+/* ブログのページ */
+.art-blog { background: hsl(var(--h) 30% 92%); }
+.art-blog .art-in { display: flex; flex-direction: column; }
+.art-blog .ag-bar { height: 7cqw; display: flex; align-items: center; gap: 1.2cqw; padding: 0 2.5cqw; background: hsl(var(--h) 18% 84%); }
+.art-blog .ag-bar i { width: 1.8cqw; height: 1.8cqw; border-radius: 50%; background: #fff; opacity: .8; }
+.art-blog .ag-bar span { flex: 1; height: 3.2cqw; margin-left: 2cqw; border-radius: 2cqw; background: #fff; opacity: .7; }
+.art-blog .ag-page { flex: 1; margin: 0 4cqw; background: #fff; padding: 2.4cqw 4cqw; display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: auto auto auto 1fr; gap: 1.6cqw 3cqw; color: #1b2b38; }
+.art-blog .ag-head { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; }
+.art-blog .ag-logo { width: 14cqw; height: 2.6cqw; border-radius: 2cqw; background: hsl(var(--h) 70% 42%); }
+.art-blog .ag-nav { width: 22cqw; height: 1.8cqw; border-radius: 2cqw; background: #dfe6ec; }
+.art-blog .ag-title { grid-column: 1 / -1; font-weight: 900; font-size: 4.6cqw; line-height: 1.3; letter-spacing: -.01em; }
+.art-blog .ag-img { grid-row: 3 / 5; border-radius: 1.6cqw; background: linear-gradient(135deg, hsl(var(--h) 75% 70%), hsl(calc(var(--h) + 40) 70% 55%)); min-height: 16cqw; }
+.art-blog .ag-toc { border: .4cqw solid hsl(var(--h) 60% 80%); border-radius: 1.4cqw; padding: 1.2cqw 1.6cqw; display: flex; flex-direction: column; gap: .9cqw; font-size: 2.2cqw; background: hsl(var(--h) 80% 97%); }
+.art-blog .ag-toc b { color: hsl(var(--h) 70% 35%); }
+.art-blog .ag-toc span, .art-blog .ag-lines span { display: block; height: 1.3cqw; border-radius: 1cqw; background: #dfe6ec; }
+.art-blog .ag-lines { display: flex; flex-direction: column; gap: 1.2cqw; }
+
+/* バナー */
+.art-banner { background: linear-gradient(120deg, hsl(var(--h) 85% 45%), hsl(calc(var(--h) + 30) 80% 38%)); color: #fff; }
+.art-banner .art-in { display: flex; align-items: center; padding: 0 7cqw; overflow: hidden; isolation: isolate; }
+.art-banner .ab-shape { position: absolute; border-radius: 50%; z-index: -1; }
+.art-banner .ab-shape.s1 { width: 50cqw; height: 50cqw; right: -12cqw; top: -18cqw; background: hsl(calc(var(--h) + 160) 90% 60%); opacity: .9; }
+.art-banner .ab-shape.s2 { width: 22cqw; height: 22cqw; right: 22cqw; bottom: -10cqw; background: #fff; opacity: .2; }
+.art-banner .ab-kicker { font-size: 3cqw; font-weight: 800; opacity: .9; }
+.art-banner .ab-title { font-size: 7.4cqw; font-weight: 900; line-height: 1.22; margin: 1.4cqw 0 3cqw; max-width: 66cqw; text-shadow: 0 .4cqw 2cqw rgba(0,0,0,.2); }
+.art-banner .ab-btn { display: inline-block; background: #fff; color: hsl(var(--h) 80% 30%); font-weight: 900; font-size: 3.2cqw; padding: 1.4cqw 3.6cqw; border-radius: 4cqw; }
+
+/* 流れの図 */
+.art-flow { background: hsl(var(--h) 60% 96%); color: #1b2b38; }
+.art-flow .art-in { padding: 5cqw 4cqw; display: flex; flex-direction: column; justify-content: center; gap: 5cqw; }
+.art-flow .af-title { font-weight: 900; font-size: 5cqw; text-align: center; }
+.art-flow .af-row { display: flex; align-items: center; justify-content: center; gap: 1cqw; }
+.art-flow .af-row i { width: 3cqw; height: .8cqw; background: hsl(var(--h) 60% 45%); position: relative; flex-shrink: 0; }
+.art-flow .af-row i::after { content: ""; position: absolute; right: -1cqw; top: -1.1cqw; border: 1.5cqw solid transparent; border-left-color: hsl(var(--h) 60% 45%); border-right: 0; }
+.art-flow .af-box { flex: 1; background: #fff; border: .5cqw solid hsl(var(--h) 60% 70%); border-radius: 2cqw; padding: 2cqw 1cqw; display: flex; flex-direction: column; align-items: center; gap: 1cqw; font-size: 2.8cqw; font-weight: 800; text-align: center; }
+.art-flow .af-box b { width: 5cqw; height: 5cqw; border-radius: 50%; display: grid; place-items: center; background: hsl(var(--h) 70% 42%); color: #fff; font-size: 2.6cqw; }
+
+/* 動画のひとこま */
+.art-video { background: #102030; }
+.art-video .av-sky { position: absolute; inset: 0; background: linear-gradient(180deg, hsl(var(--h) 70% 62%), hsl(calc(var(--h) + 30) 80% 80%)); }
+.art-video .av-sun { position: absolute; width: 16cqw; height: 16cqw; border-radius: 50%; background: #ffd166; right: 14cqw; top: 8cqw; }
+.art-video .av-hill { position: absolute; left: -10%; right: -10%; bottom: -30cqw; height: 60cqw; border-radius: 50%; background: hsl(calc(var(--h) - 60) 45% 40%); }
+.art-video .av-play { position: absolute; inset: 0; display: grid; place-items: center; }
+.art-video .av-play span { width: 13cqw; height: 13cqw; border-radius: 50%; background: rgba(255,255,255,.92); position: relative; }
+.art-video .av-play span::after { content: ""; position: absolute; left: 5.2cqw; top: 3.6cqw; border: 2.9cqw solid transparent; border-left: 4.4cqw solid #102030; border-right: 0; }
+.art-video .av-cap { position: absolute; left: 50%; bottom: 9cqw; transform: translateX(-50%); background: rgba(0,0,0,.55); color: #fff; font-weight: 800; font-size: 3.6cqw; padding: 1cqw 3cqw; border-radius: 1cqw; white-space: nowrap; max-width: 90%; overflow: hidden; text-overflow: ellipsis; }
+.art-video .av-bar { position: absolute; left: 4cqw; right: 4cqw; bottom: 3.5cqw; height: 1cqw; border-radius: 1cqw; background: rgba(255,255,255,.35); }
+.art-video .av-bar i { position: absolute; inset: 0 60% 0 0; background: #ff4f8b; border-radius: inherit; }
+
+/* SNS の投稿ならび */
+.art-sns { background: #fff; }
+.art-sns .art-in { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2cqw; padding: 1.2cqw; }
+.art-sns .as-post { border-radius: 1.2cqw; background: linear-gradient(135deg, hsl(calc(var(--h) + var(--k) * 35) 75% 68%), hsl(calc(var(--h) + var(--k) * 35 + 40) 75% 52%)); position: relative; }
+.art-sns .as-post span { position: absolute; left: 18%; right: 18%; top: 40%; height: 18%; border-radius: 1cqw; background: rgba(255,255,255,.8); }
+
+html[data-contrast="high"] .art { outline: 2px solid var(--ink); }

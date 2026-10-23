@@ -1,0 +1,220 @@
+/* =========================================================
+   エスピクトスクール 試作 — デザインの決まり（色・文字・形）
+   ・色はすべて「役わり」の名前で使う（--ink, --primary など）
+   ・ダーク／くっきり表示は、この役わりの値だけを入れかえる
+   ========================================================= */
+
+:root {
+  /* ---- ブランド（公開ページの水色をもとにした段階） ---- */
+  --brand-50:  #eaf7fc;
+  --brand-100: #d3eef9;
+  --brand-200: #a9ddf2;
+  --brand-300: #6cc6ea;
+  --brand-400: #22aee0;
+  --brand-500: #0094c8;
+  --brand-600: #0077a8;
+  --brand-700: #005f87;
+  --brand-800: #0b4a68;
+  --brand-900: #0d3349;
+  --cyan:      #00b8ec;
+
+  /* ---- アクセント（元気・LIVE） ---- */
+  --pink-50:  #fdebf2;
+  --pink-500: #e2367a;
+  --pink-600: #c81e63;
+  --sun-50:   #fff7e0;
+  --sun-300:  #ffd66b;
+  --sun-400:  #ffc53d;
+
+  /* ---- 状態の色（いつも アイコン＋ことば と いっしょに使う） ---- */
+  --ok:        #177a51;  --ok-soft:   #e6f5ee;  --ok-ink:   #135f40;
+  --warn:      #b86e00;  --warn-soft: #fff4d6;  --warn-ink: #7a4b00;
+  --bad:       #c62828;  --bad-soft:  #fdecec;  --bad-ink:  #9f1d1d;
+  --info:      #0077a8;  --info-soft: #e3f3fa;  --info-ink: #005f87;
+
+  /* ---- 級の色（カタログの 🟢🟡🔴 に合わせる） ---- */
+  --lv1: #177a51;  --lv1-soft: #e6f5ee;
+  --lv2: #9a6700;  --lv2-soft: #fff1c9;  --lv2-dot: #f2b705;
+  --lv3: #c62828;  --lv3-soft: #fdecec;
+
+  /* ---- ジャンルの色（白い文字が 4.5:1 以上になる濃さ） ---- */
+  --g-pc:      #50657a;
+  --g-web:     #0077a8;
+  --g-ai:      #0b7a70;
+  --g-design:  #c42d68;
+  --g-video:   #6a4fcf;
+  --g-sns:     #b35200;
+  --g-esports: #3d7a2e;
+
+  /* ---- 役わりの色（明るい画面） ---- */
+  --bg:          #f2f6f9;
+  --bg-tint:     #e8f3f8;
+  --surface:     #ffffff;
+  --surface-2:   #f6f9fb;
+  --surface-3:   #edf3f7;
+  --line:        #dbe5ec;
+  --line-strong: #b9cad6;
+  --ink:         #0f2a3c;
+  --ink-2:       #3a5264;
+  --ink-3:       #566b7d;
+  --primary:     #0077a8;
+  --primary-hover:#00698f;
+  --primary-ink: #ffffff;
+  --primary-soft:#e3f3fa;
+  --primary-soft-ink:#005f87;
+  --live:        #d42a6c;
+  --live-soft:   #fdebf2;
+  --live-ink:    #a5154f;
+  --focus:       #ffb703;
+  --focus-ring:  0 0 0 3px var(--surface), 0 0 0 6px #0f2a3c;
+  --scrim:       rgba(10, 28, 40, .48);
+
+  --hero-1: #0679ad;
+  --hero-2: #00517f;
+  --hero-ink: #ffffff;
+
+  /* ---- 形 ---- */
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r:    16px;
+  --r-lg: 22px;
+  --r-xl: 28px;
+  --r-full: 999px;
+
+  --sh-1: 0 1px 2px rgba(15, 42, 60, .06), 0 1px 1px rgba(15, 42, 60, .03);
+  --sh-2: 0 2px 6px rgba(15, 42, 60, .06), 0 8px 24px rgba(15, 42, 60, .07);
+  --sh-3: 0 10px 30px rgba(15, 42, 60, .16), 0 2px 8px rgba(15, 42, 60, .08);
+  --sh-pop: 0 18px 50px rgba(8, 30, 48, .28);
+
+  /* ---- 文字 ---- */
+  --font: "BIZ UDPGothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP",
+          "Yu Gothic UI", "YuGothic", "Meiryo", system-ui, sans-serif;
+  --font-num: "SF Pro Rounded", "Hiragino Sans", "BIZ UDPGothic", system-ui, sans-serif;
+  --lh: 1.75;
+  --lh-tight: 1.4;
+
+  /* ---- 動き ---- */
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  --t-fast: 120ms;
+  --t: 200ms;
+  --t-slow: 360ms;
+
+  /* ---- レイアウト ---- */
+  --topbar-h: 60px;
+  --tabbar-h: 68px;
+  --side-w: 248px;
+  --content-max: 1180px;
+  --safe-b: env(safe-area-inset-bottom, 0px);
+
+  color-scheme: light;
+}
+
+/* ---- 文字の大きさ（3段階） ---- */
+html[data-fs="1"] { font-size: 106.25%; } /* 17px：ふつう */
+html[data-fs="2"] { font-size: 118.75%; } /* 19px：大きい */
+html[data-fs="3"] { font-size: 137.5%;  } /* 22px：とても大きい */
+html[data-role="staff"][data-fs="1"],
+html[data-role="admin"][data-fs="1"] { font-size: 100%; }
+html[data-role="staff"][data-fs="2"],
+html[data-role="admin"][data-fs="2"] { font-size: 112.5%; }
+html[data-role="staff"][data-fs="3"],
+html[data-role="admin"][data-fs="3"] { font-size: 125%; }
+
+/* =========================================================
+   ダークモード
+   ========================================================= */
+html[data-theme="dark"] {
+  --bg:          #0a1620;
+  --bg-tint:     #0d1f2c;
+  --surface:     #112230;
+  --surface-2:   #152a3a;
+  --surface-3:   #1a3244;
+  --line:        #24394b;
+  --line-strong: #36506a;
+  --ink:         #e7f0f6;
+  --ink-2:       #c2d3df;
+  --ink-3:       #9fb4c4;
+  --primary:     #3cb5e6;
+  --primary-hover:#5cc4ee;
+  --primary-ink: #04121b;
+  --primary-soft:#0f3347;
+  --primary-soft-ink:#8fd6f3;
+  --live:        #ff6fa3;
+  --live-soft:   #3a1527;
+  --live-ink:    #ffb3cf;
+  --focus-ring:  0 0 0 3px var(--bg), 0 0 0 6px #ffd166;
+  --scrim:       rgba(0, 0, 0, .6);
+
+  --ok:   #57d39a; --ok-soft:   #10301f; --ok-ink:   #8fe6bd;
+  --warn: #ffc857; --warn-soft: #33270b; --warn-ink: #ffd98a;
+  --bad:  #ff8a80; --bad-soft:  #3a1616; --bad-ink:  #ffb4ac;
+  --info: #5cc6f0; --info-soft: #0f3347; --info-ink: #8fd6f3;
+
+  --lv1: #57d39a; --lv1-soft: #10301f;
+  --lv2: #ffd166; --lv2-soft: #33270b; --lv2-dot: #ffd166;
+  --lv3: #ff8a80; --lv3-soft: #3a1616;
+
+  --hero-1: #0b6f96;
+  --hero-2: #0a3f63;
+
+  --sh-1: 0 1px 2px rgba(0, 0, 0, .3);
+  --sh-2: 0 2px 6px rgba(0, 0, 0, .25), 0 8px 24px rgba(0, 0, 0, .25);
+  --sh-3: 0 10px 30px rgba(0, 0, 0, .45);
+  --sh-pop: 0 18px 50px rgba(0, 0, 0, .6);
+  color-scheme: dark;
+}
+
+/* =========================================================
+   くっきり表示（コントラストを強く・線を太く・下線を出す）
+   ========================================================= */
+html[data-contrast="high"] {
+  --bg:          #ffffff;
+  --bg-tint:     #ffffff;
+  --surface:     #ffffff;
+  --surface-2:   #ffffff;
+  --surface-3:   #f0f0f0;
+  --line:        #000000;
+  --line-strong: #000000;
+  --ink:         #000000;
+  --ink-2:       #000000;
+  --ink-3:       #1a1a1a;
+  --primary:     #004a6e;
+  --primary-hover:#003a57;
+  --primary-soft:#ffffff;
+  --primary-soft-ink:#003a57;
+  --live:        #9c0f45;
+  --live-soft:   #ffffff;
+  --live-ink:    #7a0a35;
+  --ok: #0b5233; --ok-soft: #ffffff; --ok-ink: #0b5233;
+  --warn: #6b4100; --warn-soft: #ffffff; --warn-ink: #6b4100;
+  --bad: #8f1414; --bad-soft: #ffffff; --bad-ink: #8f1414;
+  --info: #004a6e; --info-soft: #ffffff; --info-ink: #004a6e;
+  --lv1: #0b5233; --lv2: #6b4100; --lv3: #8f1414;
+  --lv1-soft: #ffffff; --lv2-soft: #ffffff; --lv3-soft: #ffffff;
+  --hero-1: #004a6e; --hero-2: #002b40;
+  --sh-1: none; --sh-2: none; --sh-3: 0 0 0 2px #000; --sh-pop: 0 0 0 3px #000;
+  --focus-ring: 0 0 0 3px #ffffff, 0 0 0 7px #000000;
+}
+html[data-contrast="high"][data-theme="dark"] {
+  --bg: #000000; --bg-tint: #000000; --surface: #000000; --surface-2: #000000; --surface-3: #111111;
+  --line: #ffffff; --line-strong: #ffffff;
+  --ink: #ffffff; --ink-2: #ffffff; --ink-3: #f0f0f0;
+  --primary: #ffe14d; --primary-hover: #fff07a; --primary-ink: #000000;
+  --primary-soft: #000000; --primary-soft-ink: #ffe14d;
+  --live: #ff8fbd; --live-soft: #000000; --live-ink: #ff8fbd;
+  --ok: #7dffb8; --ok-soft: #000; --ok-ink: #7dffb8;
+  --warn: #ffd84d; --warn-soft: #000; --warn-ink: #ffd84d;
+  --bad: #ff9e9e; --bad-soft: #000; --bad-ink: #ff9e9e;
+  --info: #7fdcff; --info-soft: #000; --info-ink: #7fdcff;
+  --lv1: #7dffb8; --lv2: #ffd84d; --lv3: #ff9e9e;
+  --lv1-soft: #000; --lv2-soft: #000; --lv3-soft: #000;
+  --hero-1: #000000; --hero-2: #000000;
+  --focus-ring: 0 0 0 3px #000000, 0 0 0 7px #ffe14d;
+  --sh-3: 0 0 0 2px #fff; --sh-pop: 0 0 0 3px #fff;
+}
+
+/* 動きをへらす（設定 または 端末の設定） */
+html[data-motion="reduce"] { --t-fast: 0ms; --t: 0ms; --t-slow: 0ms; }
+@media (prefers-reduced-motion: reduce) {
+  :root { --t-fast: 0ms; --t: 0ms; --t-slow: 0ms; }
+}
